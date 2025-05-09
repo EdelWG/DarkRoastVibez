@@ -79,3 +79,9 @@ setInterval(() => {
     angle += 1;
     document.querySelector('.beans').style.transform = `rotate(${angle}deg)`;
 }, 50);
+const hamburger = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
