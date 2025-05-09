@@ -1,34 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home - Dark Roast Vibes</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Global Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('images/coffee-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      height: 100%;
+    }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/glitter-black.jpg') repeat;
+  opacity: 0.2; /* Adjust for a subtle sparkle */
+  pointer-events: none;
+}
+
+
+    /* Gold accents */
+    .gold-text {
+      color: #d4a373;
+      text-shadow: 0 0 10px rgba(212, 163, 115, 0.8);
+    }
+
+    /* Typewriter Effect */
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #d4a373;
+      width: 100%;
+      animation: typewriter 3s steps(40, end);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      padding: 60px;
+      background: rgba(18, 16, 15, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1.5s ease-out forwards;
+      width: 80%;
+      margin: auto;
+      position: relative;
+      top: 50px;
+    }
+
+    /* Button */
+    button {
+      padding: 14px 22px;
+      background-color: #d4a373;
+      color: #12100f;
+      font-weight: bold;
+      border: none;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #b8895f;
+      box-shadow: 0 0 15px rgba(212, 163, 115, 0.8);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: rgba(18, 16, 15, 0.9);
+      font-size: 14px;
+      color: #d4a373;
+    }
+    .logo {
+  width: 100px; /* Adjust based on logo size */
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(45deg, #12100f, #1a1817, #2a2725);
+  background-size: 400% 400%;
+  animation: shimmer 8s infinite ease-in-out;
+}
+
+  </style>
 </head>
 <body>
   <header>
-    <h1>Dark Roast Vibes</h1>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav id="navLinks" class="nav-links">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <img src="images/hot-coffee.gif" alt="Dark Roast Vibes Logo" class="logo">
+    <h1 class="gold-text typewriter">Dark Roast Vibes</h1>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h2 class="typewriter">Welcome to Dark Roast Vibes</h2>
+      <h2 class="gold-text typewriter">Welcome to Dark Roast Vibes</h2>
       <p>Experience bold flavors and cozy vibes.</p>
-      <section class="intro">
-        <p style="text-align: center; font-size: 1.2rem; padding: 1rem 2rem;">
-          Life’s too short for bad coffee! At <strong>Dark Roast Vibes</strong>, we serve up bold brews, sweet sips, and the coziest vibes in town. Whether you’re chasing a caffeine kick, meeting up with friends, or just vibing solo with your thoughts and a latte — we’ve got the perfect blend waiting for you. Come for the coffee, stay for the magic!
-        </p>
-      </section>
+      <p>
+        Life’s too short for bad coffee! At <strong class="gold-text">Dark Roast Vibes</strong>, we serve up bold brews, sweet sips, and the coziest vibes in town. Whether you’re chasing a caffeine kick, meeting up with friends, or just vibing solo with your thoughts and a latte — we’ve got the perfect blend waiting for you. Come for the coffee, stay for the magic!
+      </p>
       <button onclick="location.href='menu.html'">See Our Menu</button>
     </section>
   </main>
@@ -36,7 +147,5 @@
   <footer>
     <p>&copy; 2025 Dark Roast Vibes</p>
   </footer>
-
-  <script src="index.js"></script>
 </body>
 </html>
