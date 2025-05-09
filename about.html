@@ -1,55 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us | Dark Roast Vibes</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - Dark Roast Vibes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Global Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('images/coffee-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      height: 100%;
+    }
+    body {
+  background: linear-gradient(45deg, #12100f, #1a1817, #2a2725);
+  background-size: 400% 400%;
+  animation: shimmer 8s infinite ease-in-out;
+    }
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/glitter-black.jpg') repeat;
+  opacity: 0.2; /* Adjust for a subtle sparkle */
+  pointer-events: none;
+}
+  
+    /* Gold accents */
+    .gold-text {
+      color: #d4a373;
+      text-shadow: 0 0 10px rgba(212, 163, 115, 0.8);
+    }
+
+    /* Header Styling */
+    header {
+      background: rgba(18, 16, 15, 0.9);
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d4a373;
+      font-size: 18px;
+      padding: 10px;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+
+    /* About Section */
+    .about-container {
+      max-width: 700px;
+      margin: 80px auto;
+      background: rgba(18, 16, 15, 0.85);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    /* Typewriter animation */
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #d4a373;
+      width: 100%;
+      animation: typewriter 3s steps(40, end);
+    }
+
+    /* Fade-in effect */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .about-container h2, .about-content, .signature-container {
+      animation: fadeIn 1.8s ease-out forwards;
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 15px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(85%);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+      filter: brightness(100%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    }
+
+    /* Founder Signature */
+    .signature-container {
+      margin-top: 40px;
+    }
+
+    .signature-text {
+      font-size: 20px;
+      font-style: italic;
+      color: #d4a373;
+      font-family: dancing script;
+    }
+
+    .signature-img {
+      width: 120px;
+      margin-top: 10px;
+      filter: brightness(90%);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .signature-img:hover {
+      transform: scale(1.1);
+      filter: brightness(100%);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: rgba(18, 16, 15, 0.9);
+      font-size: 14px;
+      color: #d4a373;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Dark Roast Vibes</h1>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav id="navLinks" class="nav-links">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <h1 class="gold-text">About Us - Dark Roast Vibes</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="about-section">
-    <h2>About Us</h2>
-    <hr>
-    <br>
-    <p>
-      At <strong>Dark Roast Vibes</strong>, we’re more than just a coffee shop — we’re your daily dose of comfort, community, and bold flavors. 
-      Nestled in the heart of your town, we blend the warmth of cozy nights with the kick of premium coffee beans.
-    </p>
-    <p>
-      Our mission is to create a space where every sip brings you peace, every visit feels like home, and every cup is brewed with purpose.
-    </p>
-    <p>
-      Whether you're looking to chill, work, or catch up with friends, Dark Roast Vibes is the spot for unforgettable moments.
-    </p>
-    <div class="signature">
-        <p>warmly,</p>
-        <img src="sign.jpeg" alt="signature of founder">
-        <p class="founder-name">Founder,Dark Roast Vibes</p>
-    </div>
-    <div class="social-icons">
-        <a href="#"><img src="fb.jpeg" alt="facebook"></a>
-        <a href="#"><img src="ig.jpeg" alt="Instagram"></a>
-        <a href="#"><img src="x.jpeg" alt="X"></a>
-   
-    </div>
+  <main>
+    <section class="about-container">
+      <h2 class="gold-text">Our Story</h2>
+      <p class="typewriter gold-text">
+        "At Dark Roast Vibes, every sip is a moment, and every cup tells a story."
+      </p>
+      <p class="about-content">
+        We’re more than just a coffee shop — we’re a **community of coffee lovers**.  
+        What started with one coffee machine and a big dream has now grown into a **neighborhood favorite**,  
+        where every blend brings comfort and connection. ☕✨
+      </p>
+
+      <h2 class="gold-text">Stay Connected</h2>
+      <p>Follow us for the latest updates, exclusive brews, and daily coffee vibes:</p>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://instagram.com/darkroastvibes" target="_blank">
+          <img src="images/ig.jpeg" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/darkroastvibes" target="_blank">
+          <img src="images/x.jpeg" alt="X">
+        </a>
+        <a href="https://facebook.com/darkroastvibes" target="_blank">
+          <img src="images/fb.jpeg" alt="Facebook">
+        </a>
+      </div>
+
+      <!-- Founder Section -->
+      <div class="signature-container">
+        <p class="signature-text">~ Edel Wanjiru Gitau, Founder</p>
+        <img src="images/founder.jpg" alt="Founder Signature" class="signature-img">
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Dark Roast Vibes</p>
   </footer>
-  <script src="index.js"></script>
 </body>
 </html>
