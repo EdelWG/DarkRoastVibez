@@ -124,10 +124,53 @@
       font-size: 14px;
       color: #d4a373;
     }
+    /* Default navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Hide hamburger on desktop */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Show hamburger only on small screens */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
   </style>
 </head>
 <body>
   <header>
+    
     <h1 class="gold-text typewriter">Dark Roast Vibes - Menu</h1>
     <nav class="nav-links">
       <a href="index.html">Home</a>
@@ -136,6 +179,19 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+<nav>
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
   <main>
     <section class="menu-container">
