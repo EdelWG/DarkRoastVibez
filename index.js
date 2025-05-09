@@ -40,3 +40,42 @@ window.addEventListener('load', revealOnScroll);
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("show");
 }
+document.querySelectorAll('.coffee-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+      let splash = document.createElement('div');
+      splash.classList.add('splash');
+      splash.style.left = `${event.clientX}px`;
+      splash.style.top = `${event.clientY}px`;
+      document.body.appendChild(splash);
+      setTimeout(() => splash.remove(), 500);
+  });
+});
+document.querySelectorAll('.featured-drink').forEach(drink => {
+  drink.addEventListener('mouseenter', () => drink.classList.add('pulse'));
+  drink.addEventListener('mouseleave', () => drink.classList.remove('pulse'));
+});
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.latte-art').forEach(art => {
+      let rect = art.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+          art.classList.add('reveal');
+      }
+  });
+});
+document.querySelector('.pot').addEventListener('mouseenter', () => {
+  document.querySelector('.pot').classList.add('pour');
+});
+document.querySelector('.pot').addEventListener('mouseleave', () => {
+  document.querySelector('.pot').classList.remove('pour');
+});
+document.querySelector('.caffeine-bar').addEventListener('mouseenter', () => {
+  document.querySelector('.caffeine-bar').style.width = '100%';
+});
+document.querySelector('.caffeine-bar').addEventListener('mouseleave', () => {
+  document.querySelector('.caffeine-bar').style.width = '0%';
+});
+let angle = 0;
+setInterval(() => {
+    angle += 1;
+    document.querySelector('.beans').style.transform = `rotate(${angle}deg)`;
+}, 50);
