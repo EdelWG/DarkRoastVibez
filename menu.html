@@ -3,84 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Menu</title>
+  <title>Menu - Dark Roast Vibes</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Responsive adjustments for mobile */
-    @media screen and (max-width: 768px) {
-      .menu-item {
-        flex-direction: column;
-        text-align: center;
-        padding: 12px;
-      }
+    /* Global Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(45deg, #12100f, #1a1817, #2a2725);
+      background-size: 400% 400%;
+      animation: shimmer 8s infinite ease-in-out;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      height: 100%;
+    }
 
-      .menu-img {
-        width: 100%;
-        max-width: 120px;
-        margin-bottom: 10px;
-      }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-      .menu-container {
-        width: 95%;
-        padding: 20px;
-      }
+  body {
+  background: linear-gradient(45deg, #12100f, #1a1817, #2a2725);
+  background-size: 400% 400%;
+  animation: shimmer 8s infinite ease-in-out;
+    }
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('glitter-black.jpg') repeat;
+  opacity: 0.2; /* Adjust for a subtle sparkle */
+  pointer-events: none;
+}
+    /* Typewriter Effect */
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
 
-      .nav-links {
-        font-size: 18px; /* Font adjustment for readability on smaller screens */
-      }
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #d4a373;
+      width: 100%;
+      animation: typewriter 3s steps(40, end);
+    }
 
-      button {
-        width: 100%;
-        max-width: 180px;
-        font-size: 16px; /* Font adjustment for buttons */
-        padding: 10px;
-      }
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .hamburger-menu {
-        display: flex;
-        cursor: pointer;
-        flex-direction: column;
-        gap: 5px;
-      }
+    .menu-container {
+      max-width: 800px;
+      margin: 80px auto;
+      background: rgba(18, 16, 15, 0.85);
+      padding: 80px;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
 
-      .hamburger-menu span {
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-      }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
 
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-      }
+    .menu-item:hover {
+      transform: scale(1.05);
+      background-color: rgba(18, 16, 15, 0.7);
+    }
 
-      .nav-links.show {
-        display: flex;
-      }
+    /* Menu Item Images */
+    .menu-img {
+      width: 80px;
+      height: auto;
+      margin-right: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
 
-      body {
-        overflow-x: hidden;
-      }
+    /* Button */
+    button {
+      padding: 12px 18px;
+      background-color: #d4a373;
+      color: #12100f;
+      font-weight: bold;
+      border: none;
+      font-size: 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #b8895f;
+      box-shadow: 0 0 12px rgba(212, 163, 115, 0.8);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: rgba(18, 16, 15, 0.9);
+      font-size: 14px;
+      color: #d4a373;
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <h1 class="gold-text typewriter">Dark Roast Vibes - Menu</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <h1 class="gold-text typewriter">Our Menu</h1>
   </header>
 
   <main>
@@ -122,11 +176,15 @@
 
       <div class="menu-item">
         <img src="frappe.jpeg" alt="Blended Frappé" class="menu-img">
-        <span>🥤 <strong class="gold-text">Blended Frappé</strong> - Cold and creamy bliss.</span>
+        <span>🥤 <strong class="gold-text">Blended Frappé</strong> - Cold, rich, & whipped cream.</span>
         <span class="gold-text">Ksh 400</span>
         <button>Order Now</button>
       </div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Dark Roast Vibes</p>
+  </footer>
 </body>
 </html>
